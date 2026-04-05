@@ -1,0 +1,12 @@
+{
+  "cards": [
+    { "icon": "🏆", "title": "ADREC & DLD Licensed", "desc": "Fully licensed and regulated by Abu Dhabi Real Estate Centre and Dubai Land Department. Your investment is in safe hands." },
+    { "icon": "🤝", "title": "Trusted by 70+ Clients", "desc": "A 4.9-star Google rating built on honest advice, transparent dealings, and genuine care for our clients' goals." },
+    { "icon": "🌍", "title": "Multi-Cultural Team", "desc": "Our multilingual team understands the diverse needs of Abu Dhabi's international property buyers and investors." },
+    { "icon": "📊", "title": "Market Expertise", "desc": "6+ years of in-depth Abu Dhabi market knowledge — from off-plan investments to secondary market sales and leasing." },
+    { "icon": "💎", "title": "Premium Developers", "desc": "Direct relationships with Aldar, Emaar, Sobha, DAMAC and more — giving you access to exclusive off-plan deals." },
+    { "icon": "⚡", "title": "End-to-End Service", "desc": "From search to signing — we handle viewings, negotiations, paperwork, NOC, and DLD registration for a seamless experience." },
+    { "icon": "💬", "title": "Always Reachable", "desc": "WhatsApp, phone, email — our team is available 7 days a week because property decisions don't wait for Monday mornings." },
+    { "icon": "🔑", "title": "Residential & Commercial", "desc": "Whether you're buying a family home, renting an apartment, or investing in commercial space — we cover it all." }
+  ]
+}
