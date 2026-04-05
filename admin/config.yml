@@ -2,85 +2,35 @@ backend:
   name: github
   repo: fortresspropertyauh-rgb/fortress-properties-website
   branch: main
-  base_url: https://decapcms.org
-  auth_endpoint: /api/auth
 
 media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
-
-  # ── SITE SETTINGS ──────────────────────────────────────────
   - name: "settings"
     label: "⚙️ Site Settings"
     files:
-
       - name: "general"
         label: "Company Info & Contact"
         file: "_data/general.json"
         fields:
-          - { label: "Logo Image", name: "logo", widget: "image", hint: "Upload your logo here. Recommended: PNG with transparent background, at least 400px wide." }
-          - { label: "Company Name", name: "company_name", widget: "string", default: "Fortress Properties LLC" }
-          - { label: "Tagline (below hero title)", name: "tagline", widget: "string", default: "Where Ambition Meets Address" }
-          - { label: "Hero Title Line 1", name: "hero_line1", widget: "string", default: "Your" }
-          - { label: "Hero Title Line 2 (italic gold word)", name: "hero_gold", widget: "string", default: "Fortress" }
-          - { label: "Hero Title Line 3", name: "hero_line3", widget: "string", default: "in Abu Dhabi Real Estate" }
-          - { label: "Hero Background Image", name: "hero_bg", widget: "image", required: false, hint: "Upload a skyline or property photo for the hero background. Recommended: 1920x1080px" }
-          - { label: "Primary Phone", name: "phone1", widget: "string", default: "+971507002904" }
-          - { label: "Phone 2", name: "phone2", widget: "string", default: "+971507002914" }
-          - { label: "Phone 3", name: "phone3", widget: "string", default: "+971507008795" }
-          - { label: "Phone 4", name: "phone4", widget: "string", default: "+971505077743" }
-          - { label: "WhatsApp Number (with country code, no +)", name: "whatsapp", widget: "string", default: "971507002904" }
-          - { label: "Email Address", name: "email", widget: "string", default: "info@fortresspropertiesllc.com" }
-          - { label: "Office Address Line 1", name: "address1", widget: "string", default: "Office M3, Al Farah Tower" }
-          - { label: "Office Address Line 2", name: "address2", widget: "string", default: "Mina Street, TCA, Abu Dhabi, UAE" }
-          - { label: "Office Hours – Weekdays", name: "hours_weekday", widget: "string", default: "Monday – Friday: 9:00 AM – 6:00 PM" }
-          - { label: "Office Hours – Saturday", name: "hours_sat", widget: "string", default: "Saturday: 10:00 AM – 4:00 PM" }
-          - { label: "Office Hours – Sunday", name: "hours_sun", widget: "string", default: "Sunday: By Appointment" }
-          - { label: "Formspree Form ID", name: "formspree_id", widget: "string", default: "YOUR_FORM_ID", hint: "Get this from formspree.io — looks like 'xbjvkpqr'" }
-          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
-          - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
-          - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
-          - { label: "Google Maps Embed URL", name: "maps_url", widget: "string", required: false, hint: "Paste your Google Maps embed link here" }
+          - {label: "Logo Image", name: "logo", widget: "image"}
+          - {label: "Company Name", name: "company_name", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Hero Background Image", name: "hero_bg", widget: "image", required: false}
+          - {label: "Primary Phone", name: "phone1", widget: "string"}
+          - {label: "Phone 2", name: "phone2", widget: "string"}
+          - {label: "Phone 3", name: "phone3", widget: "string"}
+          - {label: "Phone 4", name: "phone4", widget: "string"}
+          - {label: "WhatsApp (no + sign)", name: "whatsapp", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Address Line 1", name: "address1", widget: "string"}
+          - {label: "Address Line 2", name: "address2", widget: "string"}
+          - {label: "Formspree Form ID", name: "formspree_id", widget: "string"}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+          - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}
 
-      - name: "stats"
-        label: "Stats Bar (Hero Numbers)"
-        file: "_data/stats.json"
-        fields:
-          - label: "Stats"
-            name: "stats"
-            widget: "list"
-            fields:
-              - { label: "Number / Value", name: "num", widget: "string" }
-              - { label: "Label", name: "label", widget: "string" }
-
-      - name: "about"
-        label: "About Us Page"
-        file: "_data/about.json"
-        fields:
-          - { label: "Section Heading", name: "heading", widget: "string", default: "Built on Trust, Driven by Results" }
-          - { label: "Paragraph 1", name: "para1", widget: "text" }
-          - { label: "Paragraph 2", name: "para2", widget: "text" }
-          - { label: "Mission Statement", name: "mission", widget: "text" }
-          - { label: "Vision Statement", name: "vision", widget: "text" }
-          - { label: "License Badge 1", name: "badge1", widget: "string", default: "ADREC Licensed Broker" }
-          - { label: "License Badge 2", name: "badge2", widget: "string", default: "DLD Registered" }
-          - { label: "License Badge 3", name: "badge3", widget: "string", default: "Est. 2018" }
-          - { label: "About Image (optional)", name: "about_img", widget: "image", required: false }
-
-      - name: "why"
-        label: "Why Choose Us Cards"
-        file: "_data/why.json"
-        fields:
-          - label: "Cards"
-            name: "cards"
-            widget: "list"
-            fields:
-              - { label: "Icon (emoji)", name: "icon", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "desc", widget: "text" }
-
-  # ── PROPERTIES ─────────────────────────────────────────────
   - name: "properties"
     label: "🏠 Property Listings"
     folder: "_data/properties"
@@ -88,20 +38,19 @@ collections:
     slug: "{{slug}}"
     identifier_field: "title"
     fields:
-      - { label: "Property Title", name: "title", widget: "string", hint: "e.g. Luxury 2BR Apartment – Sea View" }
-      - { label: "Status", name: "status", widget: "select", options: ["For Sale", "For Rent", "Off-Plan", "Sold", "Rented"] }
-      - { label: "Type", name: "type", widget: "select", options: ["apartment", "villa", "commercial", "offplan", "townhouse", "penthouse"] }
-      - { label: "Price", name: "price", widget: "string", hint: "e.g. AED 1,800,000 or AED 85,000 / year" }
-      - { label: "Location / Area", name: "location", widget: "string", hint: "e.g. Al Reem Island, Abu Dhabi" }
-      - { label: "Bedrooms", name: "beds", widget: "string", hint: "e.g. 2 or Studio or N/A for commercial" }
-      - { label: "Bathrooms", name: "baths", widget: "string", hint: "e.g. 2 or N/A" }
-      - { label: "Size", name: "size", widget: "string", hint: "e.g. 1,250 sqft" }
-      - { label: "Property Photo", name: "photo", widget: "image", required: false }
-      - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Featured (show on homepage)", name: "featured", widget: "boolean", default: true }
-      - { label: "WhatsApp Message (pre-filled)", name: "wa_message", widget: "string", hint: "e.g. Hi, I'm interested in the 2BR on Al Reem Island" }
+      - {label: "Property Title", name: "title", widget: "string"}
+      - {label: "Status", name: "status", widget: "select", options: ["For Sale", "For Rent", "Off-Plan", "Sold", "Rented"]}
+      - {label: "Type", name: "type", widget: "select", options: ["apartment", "villa", "commercial", "offplan", "townhouse", "penthouse"]}
+      - {label: "Price", name: "price", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Bedrooms", name: "beds", widget: "string"}
+      - {label: "Bathrooms", name: "baths", widget: "string"}
+      - {label: "Size", name: "size", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Featured on Homepage", name: "featured", widget: "boolean", default: true}
+      - {label: "WhatsApp Message", name: "wa_message", widget: "string"}
 
-  # ── TEAM ───────────────────────────────────────────────────
   - name: "team"
     label: "👥 Team Members"
     folder: "_data/team"
@@ -109,16 +58,15 @@ collections:
     slug: "{{slug}}"
     identifier_field: "name"
     fields:
-      - { label: "Full Name", name: "name", widget: "string" }
-      - { label: "Job Title / Role", name: "role", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image", required: false }
-      - { label: "WhatsApp Number (with country code, no +)", name: "whatsapp", widget: "string" }
-      - { label: "Display Phone", name: "phone_display", widget: "string", hint: "e.g. +971 50 700 2904" }
-      - { label: "Languages Spoken", name: "languages", widget: "string", hint: "e.g. English, Urdu, Arabic" }
-      - { label: "Short Bio", name: "bio", widget: "text", required: false }
-      - { label: "Order (1 = first)", name: "order", widget: "number", default: 1 }
+      - {label: "Full Name", name: "name", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+      - {label: "WhatsApp Number", name: "whatsapp", widget: "string"}
+      - {label: "Display Phone", name: "phone_display", widget: "string"}
+      - {label: "Languages", name: "languages", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text", required: false}
+      - {label: "Order", name: "order", widget: "number", default: 1}
 
-  # ── TESTIMONIALS ───────────────────────────────────────────
   - name: "testimonials"
     label: "⭐ Testimonials"
     folder: "_data/testimonials"
@@ -126,13 +74,11 @@ collections:
     slug: "{{slug}}"
     identifier_field: "name"
     fields:
-      - { label: "Client Name", name: "name", widget: "string" }
-      - { label: "Review Text", name: "text", widget: "text" }
-      - { label: "Star Rating", name: "stars", widget: "select", options: ["5", "4", "3"], default: "5" }
-      - { label: "Source / Deal Type", name: "source", widget: "string", hint: "e.g. Google Review · Al Reem Island Purchase" }
-      - { label: "Avatar Emoji (optional)", name: "avatar", widget: "string", default: "👤" }
+      - {label: "Client Name", name: "name", widget: "string"}
+      - {label: "Review Text", name: "text", widget: "text"}
+      - {label: "Stars", name: "stars", widget: "select", options: ["5","4","3"], default: "5"}
+      - {label: "Source", name: "source", widget: "string"}
 
-  # ── DEVELOPERS ─────────────────────────────────────────────
   - name: "developers"
     label: "🏗️ Developer Partners"
     folder: "_data/developers"
@@ -140,8 +86,8 @@ collections:
     slug: "{{slug}}"
     identifier_field: "name"
     fields:
-      - { label: "Developer Name", name: "name", widget: "string" }
-      - { label: "Logo", name: "logo", widget: "image", required: false }
-      - { label: "Location / Tag", name: "location", widget: "string", hint: "e.g. Abu Dhabi or UAE" }
-      - { label: "Icon Emoji (fallback if no logo)", name: "icon", widget: "string", default: "🏗️" }
-      - { label: "Order (1 = first)", name: "order", widget: "number", default: 1 }
+      - {label: "Developer Name", name: "name", widget: "string"}
+      - {label: "Logo", name: "logo", widget: "image", required: false}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Icon Emoji", name: "icon", widget: "string", default: "🏗️"}
+      - {label: "Order", name: "order", widget: "number", default: 1}
