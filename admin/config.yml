@@ -2,6 +2,7 @@ backend:
   name: github
   repo: fortresspropertyauh-rgb/fortress-properties-website
   branch: main
+  base_url: https://api.decapcms.org
 
 media_folder: "uploads"
 public_folder: "/uploads"
