@@ -87,6 +87,7 @@ collections:
     label: "🏠 Property Listings"
     folder: _data/properties
     create: true
+    format: json
     slug: "{{slug}}"
     identifier_field: title
     fields:
@@ -107,6 +108,7 @@ collections:
     label: "👥 Team Members"
     folder: _data/team
     create: true
+    format: json
     slug: "{{slug}}"
     identifier_field: name
     fields:
@@ -123,6 +125,7 @@ collections:
     label: "⭐ Testimonials"
     folder: _data/testimonials
     create: true
+    format: json
     slug: "{{slug}}"
     identifier_field: name
     fields:
@@ -135,6 +138,7 @@ collections:
     label: "🏗️ Developer Partners"
     folder: _data/developers
     create: true
+    format: json
     slug: "{{slug}}"
     identifier_field: name
     fields:
