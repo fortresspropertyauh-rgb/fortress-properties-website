@@ -1,5 +1,5 @@
 ---
-name: Talha Raheel Rana
+name: Talha Raheel
 role: Operations Manager / Property Consultant
 photo: /uploads/Talhaport.png
 whatsapp: '971507002904'
