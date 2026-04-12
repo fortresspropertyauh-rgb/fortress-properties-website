@@ -1,0 +1,145 @@
+backend:
+  name: github
+  repo: fortresspropertyauh-rgb/fortress-properties-website
+  branch: main
+
+media_folder: uploads
+public_folder: /uploads
+
+collections:
+
+  - name: settings
+    label: "⚙️ Site Settings"
+    files:
+
+      - name: general
+        label: "Company Info, Hero & Contact"
+        file: _data/general.json
+        fields:
+          - {label: "Logo Image", name: logo, widget: image, required: false}
+          - {label: "Company Name (navbar)", name: company_name, widget: string}
+          - {label: "Tagline (hero italic line)", name: tagline, widget: string}
+          - {label: "Hero Background Photo", name: hero_bg, widget: image, required: false, hint: "1920x1080px recommended"}
+          - {label: "Hero Line 1 (plain text)", name: hero_line1, widget: string, hint: "e.g. Your"}
+          - {label: "Hero Gold Word (italic gold)", name: hero_gold, widget: string, hint: "e.g. Fortress"}
+          - {label: "Hero Line 3", name: hero_line3, widget: string, hint: "e.g. in Abu Dhabi Real Estate"}
+          - {label: "Hero Eyebrow Text", name: hero_eyebrow, widget: string, hint: "Small text above title"}
+          - {label: "Why Choose Us Title", name: why_title, widget: string}
+          - {label: "Why Choose Us Subtitle", name: why_subtitle, widget: text}
+          - {label: "CTA Section Title", name: cta_title, widget: string}
+          - {label: "CTA Section Subtitle", name: cta_sub, widget: string}
+          - {label: "Google Rating Text", name: google_rating, widget: string, hint: "e.g. 4.9 · 70+ Reviews on Google"}
+          - {label: "Footer Description", name: footer_desc, widget: text}
+          - {label: "Primary Phone", name: phone1, widget: string}
+          - {label: "Phone 2", name: phone2, widget: string}
+          - {label: "Phone 3", name: phone3, widget: string}
+          - {label: "Phone 4", name: phone4, widget: string}
+          - {label: "WhatsApp Number (no + sign, no spaces)", name: whatsapp, widget: string, hint: "e.g. 971507002904"}
+          - {label: "Email", name: email, widget: string}
+          - {label: "Address Line 1", name: address1, widget: string}
+          - {label: "Address Line 2", name: address2, widget: string}
+          - {label: "Weekday Hours", name: hours_weekday, widget: string}
+          - {label: "Saturday Hours", name: hours_sat, widget: string}
+          - {label: "Sunday Hours", name: hours_sun, widget: string}
+          - {label: "Formspree Form ID", name: formspree_id, widget: string, hint: "From formspree.io — e.g. xbjvkpqr"}
+          - {label: "Instagram URL", name: instagram, widget: string, required: false}
+          - {label: "Facebook URL", name: facebook, widget: string, required: false}
+          - {label: "LinkedIn URL", name: linkedin, widget: string, required: false}
+
+      - name: stats
+        label: "Stats Bar Numbers"
+        file: _data/stats.json
+        fields:
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - {label: "Number / Value", name: num, widget: string, hint: "e.g. 6+ or 4.9★"}
+              - {label: "Label", name: label, widget: string, hint: "e.g. Years in Market"}
+
+      - name: about
+        label: "About Us Content"
+        file: _data/about.json
+        fields:
+          - {label: "Section Heading", name: heading, widget: string, hint: "Use <br> for line break"}
+          - {label: "Paragraph 1", name: para1, widget: text}
+          - {label: "Paragraph 2", name: para2, widget: text}
+          - {label: "Mission Statement", name: mission, widget: text}
+          - {label: "Vision Statement", name: vision, widget: text}
+          - {label: "Badge 1", name: badge1, widget: string}
+          - {label: "Badge 2", name: badge2, widget: string}
+          - {label: "Badge 3", name: badge3, widget: string}
+          - {label: "About Us Photo (optional)", name: about_img, widget: image, required: false}
+
+      - name: why
+        label: "Why Choose Us Cards"
+        file: _data/why.json
+        fields:
+          - label: Cards
+            name: cards
+            widget: list
+            fields:
+              - {label: "Icon (emoji)", name: icon, widget: string, hint: "Paste an emoji e.g. 🏆"}
+              - {label: "Title", name: title, widget: string}
+              - {label: "Description", name: desc, widget: text}
+
+  - name: properties
+    label: "🏠 Property Listings"
+    folder: _data/properties
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - {label: "Property Title", name: title, widget: string}
+      - {label: "Status", name: status, widget: select, options: ["For Sale","For Rent","Off-Plan","Sold","Rented"]}
+      - {label: "Type", name: type, widget: select, options: [apartment,villa,commercial,offplan,townhouse,penthouse]}
+      - {label: "Price", name: price, widget: string, hint: "e.g. AED 1,800,000 or AED 85,000 / year"}
+      - {label: "Location", name: location, widget: string}
+      - {label: "Bedrooms", name: beds, widget: string, hint: "e.g. 2 Beds or N/A"}
+      - {label: "Bathrooms", name: baths, widget: string, hint: "e.g. 2 Baths or N/A"}
+      - {label: "Size", name: size, widget: string, hint: "e.g. 1,250 sqft"}
+      - {label: "Property Photo", name: photo, widget: image, required: false}
+      - {label: "Description", name: description, widget: text, required: false}
+      - {label: "Show on Homepage", name: featured, widget: boolean, default: true}
+      - {label: "WhatsApp Pre-filled Message", name: wa_message, widget: string, hint: "e.g. Hi, I am interested in the 2BR on Al Reem Island"}
+
+  - name: team
+    label: "👥 Team Members"
+    folder: _data/team
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - {label: "Full Name", name: name, widget: string}
+      - {label: "Role / Title", name: role, widget: string}
+      - {label: "Photo", name: photo, widget: image, required: false}
+      - {label: "WhatsApp Number (no + sign, no spaces)", name: whatsapp, widget: string}
+      - {label: "Display Phone", name: phone_display, widget: string, hint: "e.g. +971 50 700 2904"}
+      - {label: "Languages", name: languages, widget: string, hint: "e.g. English, Arabic, Urdu"}
+      - {label: "Short Bio", name: bio, widget: text, required: false}
+      - {label: "Display Order", name: order, widget: number, default: 1}
+
+  - name: testimonials
+    label: "⭐ Testimonials"
+    folder: _data/testimonials
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - {label: "Client Name", name: name, widget: string}
+      - {label: "Review Text", name: text, widget: text}
+      - {label: "Stars", name: stars, widget: select, options: ["5","4","3"], default: "5"}
+      - {label: "Source", name: source, widget: string, hint: "e.g. Google Review · Al Reem Island Purchase"}
+
+  - name: developers
+    label: "🏗️ Developer Partners"
+    folder: _data/developers
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - {label: "Developer Name", name: name, widget: string}
+      - {label: "Logo Image", name: logo, widget: image, required: false}
+      - {label: "Location", name: location, widget: string, hint: "e.g. Abu Dhabi or UAE"}
+      - {label: "Icon Emoji (shown if no logo)", name: icon, widget: string, default: "🏗️"}
+      - {label: "Display Order", name: order, widget: number, default: 1}
