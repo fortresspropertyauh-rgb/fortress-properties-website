@@ -1,7 +1,7 @@
 {
   "name": "Emaar",
-  "icon": "🏙️",
+  "logo": "/uploads/emaarlogo.png",
   "location": "Dubai / UAE",
-  "logo": "",
+  "icon": "🏙️",
   "order": 2
 }
