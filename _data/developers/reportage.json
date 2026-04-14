@@ -1,7 +1,7 @@
 {
   "name": "Reportage",
-  "icon": "🌟",
+  "logo": "/uploads/reportagelogo.png",
   "location": "UAE",
-  "logo": "",
+  "icon": "🌟",
   "order": 10
 }
